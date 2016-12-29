@@ -57,6 +57,7 @@ flags = [
     '.', 
     '-isystem', 
     '/usr/include/', 
+    '/Applications/Xcoe.app/Contents/Developer/Platorms/iPhoneSimlator.platorm/Developer/SDKs/iPhoneSimlator',
 ]
 
 
