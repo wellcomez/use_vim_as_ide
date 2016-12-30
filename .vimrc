@@ -1,7 +1,7 @@
 " 更新时间：2016-03-30 12:15:21
 
 " 定义快捷键的前缀，即 <Leader>
-let mapleader=";"
+let mapleader="\\"
 
 " >>
 " 文件类型侦测
@@ -98,11 +98,11 @@ Plugin 'dyng/ctrlsf.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-scripts/DrawIt'
-"Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
 " YCM 补全菜单配色
 " 菜单
-highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
+highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#F0F8FF
 " 选中项
 highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
 " 补全功能在注释中同样有效
@@ -124,8 +124,7 @@ let g:ycm_cache_omnifunc=0
 " 语法关键字补全         
 let g:ycm_seed_identifiers_with_syntax=1
 
-let
-g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
 
 
 Plugin 'derekwyatt/vim-protodef'
@@ -156,6 +155,8 @@ nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 nmap <C-_>r :Gtags -r<C-R>=expand("<cword>")<CR><CR>
 
+Plugin 'airblade/vim-gitgutter'
+
 
 " 插件列表结束
 call vundle#end()
@@ -167,6 +168,8 @@ filetype plugin indent on
 if has("gui_running")
     set background=dark
     colorscheme solarized
+else
+    colorscheme darkblue
 endif
 "colorscheme molokai
 "colorscheme phd
@@ -443,10 +446,10 @@ nnoremap <Leader>rwc :call Replace(1, 1, input('Replace '.expand('<cword>').' wi
 
 " 模板补全
 " UltiSnips 的 tab 键与 YCM 冲突，重新设定
-"let g:UltiSnipsSnippetDirectories=["mysnippets"]
-"let g:UltiSnipsExpandTrigger="<leader><tab>"
-"let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
-"let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
+let g:UltiSnipsSnippetDirectories=["mysnippets"]
+let g:UltiSnipsExpandTrigger="<leader><tab>"
+let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
+let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
 
 " >>
 " YCM 补全
