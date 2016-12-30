@@ -157,6 +157,16 @@ nmap <C-_>r :Gtags -r<C-R>=expand("<cword>")<CR><CR>
 
 Plugin 'airblade/vim-gitgutter'
 
+"ctrlp...............................................................................................
+Plugin 'ctrlp.vim'
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*        " Linux/MacOSX
+let g:ctrlp_max_height = 100
+let g:ctrlp_max_files =0 
+let g:ctrlp_by_filename = 0
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+noremap <C-W><C-U> :CtrlPMRU<CR>
+nnoremap <C-W>u :CtrlPMRU<CR>
 
 " 插件列表结束
 call vundle#end()
